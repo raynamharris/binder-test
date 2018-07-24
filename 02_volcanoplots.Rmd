@@ -72,9 +72,6 @@ volcanoplot <- ggplot(dissociation, aes(x = lfc, y = pvalue)) +
 volcanoplot  
 
   
-pdf(file = "./figures/02_volcanoplots/Treatment_volcano.pdf", width=2.5, height=2.25)
-plot(volcanoplot)
-dev.off()
 ```
 
 Caption: Differntial gene expression according to treatment is asymetric, with more genes enrighted in DISS. only 3 canddiate learning and memory genes identified.
@@ -106,9 +103,6 @@ volcanoplot2 <- ggplot(subfield, aes(x = lfc, y = pvalue)) +
     annotate("text", label = "262", x = 10, y = 18, size = 3, color = "black")
 volcanoplot2 
 
-pdf(file = "./figures/02_volcanoplots/CA1DG_volcano.pdf", width=2.5, height=2.25)
-plot(volcanoplot2)
-dev.off()
 
 ```
 
