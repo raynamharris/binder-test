@@ -14,14 +14,14 @@ library(dplyr)
 library(ggrepel)
 
 # set output file for figures 
-knitr::opts_chunk$set(fig.path = '../figures/02_volcanoplots/')
+knitr::opts_chunk$set(fig.path = './figures/02_volcanoplots/')
 ```
 
 Here I load the relevant dataframes and set the color palette.
 
 ```{r loaddata}
 # dissocation DEGes
-dissociation <- read.csv("../results/01_dissociation_volcanoTreatment.csv", header = T, row.names = 1)
+dissociation <- read.csv("./results/01_dissociation_volcanoTreatment.csv", header = T, row.names = 1)
 
 #set levels
 dissociation$color <- factor(dissociation$color,
@@ -38,7 +38,7 @@ candidates <- candidates[,c(1)]
 candidates
 
 # subfield specific degs
-subfield <- read.csv("../results/01_dissociation_volcanoCA1DG.csv", header = T, row.names = 1)
+subfield <- read.csv("./results/01_dissociation_volcanoCA1DG.csv", header = T, row.names = 1)
 
 ```
 
@@ -72,7 +72,7 @@ volcanoplot <- ggplot(dissociation, aes(x = lfc, y = pvalue)) +
 volcanoplot  
 
   
-pdf(file = "../figures/02_volcanoplots/Treatment_volcano.pdf", width=2.5, height=2.25)
+pdf(file = "./figures/02_volcanoplots/Treatment_volcano.pdf", width=2.5, height=2.25)
 plot(volcanoplot)
 dev.off()
 ```
@@ -106,7 +106,7 @@ volcanoplot2 <- ggplot(subfield, aes(x = lfc, y = pvalue)) +
     annotate("text", label = "262", x = 10, y = 18, size = 3, color = "black")
 volcanoplot2 
 
-pdf(file = "../figures/02_volcanoplots/CA1DG_volcano.pdf", width=2.5, height=2.25)
+pdf(file = "./figures/02_volcanoplots/CA1DG_volcano.pdf", width=2.5, height=2.25)
 plot(volcanoplot2)
 dev.off()
 
